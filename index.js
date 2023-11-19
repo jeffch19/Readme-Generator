@@ -86,7 +86,7 @@ function init() {
 }
 //ask the questions here
 let responses = {
-  title: "Turtle"
+  // title: "Turtle"
 }
   generateMarkdown(responses)
 
