@@ -2,8 +2,9 @@
 const generateMarkdown = require('./utils/generateMarkdown');
 const inquirer = require('inquirer');
 const fs = require('fs');
+const path = require('path'); 
 //declare output folder
-const outputFolder = './output';
+const outputFolder = path.join(__dirname, 'output');
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -66,7 +67,6 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
   // Check if the output folder exists, create it if not
-  const outputFolder = './output';
   if (!fs.existsSync(outputFolder)) {
     fs.mkdirSync(outputFolder);
   }
@@ -88,6 +88,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(questions).then((responses) => {
     // Ensure that the title is provided before proceeding
+    console.log(responses);
     if (!responses.title) {
       console.error('Please provide a title for your project.');
       return;
