@@ -13,7 +13,7 @@ const questions = [
     {
       type: 'input',
       name: "Description",
-      message: "Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:"
+      message: "Provide a short description explaining the what, why, and how of your project."
     },
 
     {
@@ -85,6 +85,12 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then((responses) => {
+    // Ensure that the title is provided before proceeding
+    if (!responses.title) {
+      console.error('Please provide a title for your project.');
+      return;
+    }
+
     // Generate filepath
     const fileName = responses.title.replace(/\s+/g, '-').toLowerCase(); // Make a filename from the title
     const filePath = `${fileName}-README`;
