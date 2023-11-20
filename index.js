@@ -109,7 +109,6 @@ function init() {
 let responses = {
   // title: "Turtle"
 }
-  generateMarkdown(responses)
 
 
 // Function call to initialize app
