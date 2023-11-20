@@ -48,7 +48,7 @@ ${data.Installation}
 ## Usage
 ${data.Usage}
 
-## License
+
 ${renderLicenseSection(data.License)}
 
 ## Contributing
