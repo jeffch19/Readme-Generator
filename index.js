@@ -93,7 +93,7 @@ function init() {
 
     // Generate filepath
     const fileName = responses.title.replace(/\s+/g, '-').toLowerCase(); // Make a filename from the title
-    const filePath = `${fileName}-README`;
+    const filePath = `${outputFolder}/${fileName}.md`;
 
     // Call the function to generate readme content
     const readmeContent = generateMarkdown(responses);
