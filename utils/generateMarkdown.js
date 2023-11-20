@@ -32,7 +32,7 @@ function generateMarkdown(data) {
 # ${data.Title}
 
 ## Description
-${data.description}
+${data.Description}
 
 ## Table of Contents
 - [Installation](#installation)
@@ -43,23 +43,23 @@ ${data.description}
 - [Questions](#questions)
 
 ## Installation
-${data.installation}
+${data.Installation}
 
 ## Usage
-${data.usage}
+${data.Usage}
 
 ## License
-${renderLicenseSection(data.license)}
+${renderLicenseSection(data.License)}
 
 ## Contributing
-${data.contributing}
+${data.Credits}
 
 ## Tests
-${data.tests}
+${data.Tests}
 
 ## Questions
-GitHub: [${data.username}](https://github.com/${data.username})
-Email: ${data.email}
+GitHub: [${data.Questions}](https://github.com/${data.Questions})
+Email: ${data.Questions}
 `;
 
 return readmeContent;
