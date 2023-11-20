@@ -16,7 +16,7 @@ Use this generator to create a professional README with Node!
 enter node index.js in the terminal and answer the questions to generate a README
 
 ## Usage
-![alt text](./Assets/readmepicture.png)
+![alt text](./utils/readmepicture.png)
 
 
 ## License
