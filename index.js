@@ -63,12 +63,19 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  //generate filepath
-  const filePath = `./output/${fileName}.md`;
-  //write the readme content to the file
+  // Check if the output folder exists, create it if not
+  const outputFolder = './output';
+  if (!fs.existsSync(outputFolder)) {
+    fs.mkdirSync(outputFolder);
+  }
+
+  // Generate filepath
+  const filePath = `${outputFolder}/${fileName}.md`;
+
+  // Write the readme content to the file
   fs.writeFile(filePath, data, (err) => {
-    if(err){
-      console.error('error writing readme file', err);
+    if (err) {
+      console.error('Error writing readme file', err);
     } else {
       console.log(`README file has been successfully written to ${filePath}`);
     }
@@ -78,10 +85,18 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then((responses) => {
-    //call the function to generate readme content
+    // Generate filepath
+    const fileName = responses.title.replace(/\s+/g, '-').toLowerCase(); // Make a filename from the title
+    const filePath = `${fileName}-README`;
+
+    // Call the function to generate readme content
     const readmeContent = generateMarkdown(responses);
-    //Output or save readme content as needed
+
+    // Output or save readme content as needed
     console.log(readmeContent);
+
+    // Call the function to write to file
+    writeToFile(filePath, readmeContent);
   });
 }
 //ask the questions here
