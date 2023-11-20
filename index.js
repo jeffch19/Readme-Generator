@@ -2,6 +2,8 @@
 const generateMarkdown = require('./utils/generateMarkdown');
 const inquirer = require('inquirer');
 const fs = require('fs');
+//declare output folder
+const outputFolder = './output';
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -104,10 +106,6 @@ function init() {
     // Call the function to write to file
     writeToFile(filePath, readmeContent);
   });
-}
-//ask the questions here
-let responses = {
-  // title: "Turtle"
 }
 
 
